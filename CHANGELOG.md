@@ -1,3 +1,9 @@
+## 2.11.0 (May 23rd, 2024)
+
+FEATURES:
+
+* Adds support for creating and modifying HTTP/HTTPS redirects
+
 ## 2.10.0 (April 18th, 2024)
 
 FEATURES:
