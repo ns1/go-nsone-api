@@ -3,13 +3,14 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	"gopkg.in/ns1/ns1-go.v2/rest/model/dataset"
 	"io"
 	"log"
 	"net/http"
 	"os"
 	"strings"
 	"time"
+
+	"gopkg.in/ns1/ns1-go.v2/rest/model/dataset"
 
 	api "gopkg.in/ns1/ns1-go.v2/rest"
 )

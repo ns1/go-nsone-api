@@ -2,8 +2,9 @@ package mockns1
 
 import (
 	"fmt"
-	"gopkg.in/ns1/ns1-go.v2/rest/model/dns"
 	"net/http"
+
+	"gopkg.in/ns1/ns1-go.v2/rest/model/dns"
 )
 
 // AddZoneListTestCase sets up a test case for the api.Client.Versions.List()

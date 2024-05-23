@@ -1,12 +1,13 @@
 package rest_test
 
 import (
+	"net/http"
+	"testing"
+
 	"github.com/stretchr/testify/require"
 	"gopkg.in/ns1/ns1-go.v2/mockns1"
 	api "gopkg.in/ns1/ns1-go.v2/rest"
 	"gopkg.in/ns1/ns1-go.v2/rest/model/dns"
-	"net/http"
-	"testing"
 )
 
 func TestVersion(t *testing.T) {

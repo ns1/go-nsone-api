@@ -1,8 +1,9 @@
 package mockns1
 
 import (
-	"gopkg.in/ns1/ns1-go.v2/rest/model/pulsar"
 	"net/http"
+
+	"gopkg.in/ns1/ns1-go.v2/rest/model/pulsar"
 )
 
 // AddApplicationTestCase sets up a test case for the api.Client.application.List()
