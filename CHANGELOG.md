@@ -1,3 +1,22 @@
+## 2.10.0 (April 18th, 2024)
+
+FEATURES:
+
+* Adds support for listing account activity
+* Adds support for setting URL parameters on client requests
+
+## 2.9.1 (April 3rd, 2024)
+
+BUG FIXES:
+
+* Re-add `omitempty` to both `tags` and `blocked_tags` as the limitation in update 2.7.12 has been lifted
+
+## 2.9.0 (March 7th, 2024)
+
+FEATURES:
+
+* Adds support for listing available monitoring regions
+
 ## 2.8.0 (February 14th, 2024)
 
 FEATURES:
@@ -43,7 +62,7 @@ BUG FIXES:
 ## 2.7.6 (April 28, 2023)
 BUG FIXES:
 
-* **Breaking** Various name changes to be more idiomatic 
+* **Breaking** Various name changes to be more idiomatic
     *  `DNSView`        -> `View`
     *  `PulsarJob`      -> `Job`
     *  `Created_at`     -> `CreatedAt`

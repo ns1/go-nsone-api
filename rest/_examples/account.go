@@ -67,4 +67,14 @@ func main() {
 	if _, err := client.APIKeys.Create(&key); err != nil {
 		log.Fatal(err)
 	}
+
+	activity, _, err := client.Activity.List()
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	for _, a := range activity {
+		b, _ := json.MarshalIndent(a, "", "  ")
+		fmt.Println(string(b))
+	}
 }
