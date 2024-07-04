@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"net/http"
 
+	"gopkg.in/ns1/ns1-go.v2/rest/model/data"
 	"gopkg.in/ns1/ns1-go.v2/rest/model/dns"
 )
 
@@ -44,6 +45,11 @@ func (s *RecordsService) Get(zone, domain, t string) (*dns.Record, *http.Respons
 func (s *RecordsService) Create(r *dns.Record) (*http.Response, error) {
 	path := fmt.Sprintf("zones/%s/%s/%s", r.Zone, r.Domain, r.Type)
 
+	// the current API can't deal with nulls and this is not omitempty
+	if r.Regions == nil {
+		r.Regions = data.Regions{}
+	}
+
 	req, err := s.client.NewRequest("PUT", path, &r)
 	if err != nil {
 		return nil, err
@@ -73,6 +79,11 @@ func (s *RecordsService) Create(r *dns.Record) (*http.Response, error) {
 // NS1 API docs: https://ns1.com/api/#record-post
 func (s *RecordsService) Update(r *dns.Record) (*http.Response, error) {
 	path := fmt.Sprintf("zones/%s/%s/%s", r.Zone, r.Domain, r.Type)
+
+	// the current API can't deal with nulls and this is not omitempty
+	if r.Regions == nil {
+		r.Regions = data.Regions{}
+	}
 
 	req, err := s.client.NewRequest("POST", path, &r)
 	if err != nil {
