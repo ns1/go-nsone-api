@@ -1,3 +1,9 @@
+## 2.11.1 (July 5th, 2024)
+
+BUG FIXES:
+
+* Allowing to wipe the record regions, but dropping support for "leave as is" behaviour when null
+
 ## 2.11.0 (May 23rd, 2024)
 
 FEATURES:
