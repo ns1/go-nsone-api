@@ -1,3 +1,10 @@
+## 2.12.1 (Sep 23rd, 2024)
+
+BUG FIXES:
+
+* Adds "feeds" field to the Answer struct
+* Adds "destinations" field to the Feed struct
+
 ## 2.12.0 (Jul 19th, 2024)
 
 FEATURES:
