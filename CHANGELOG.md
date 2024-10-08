@@ -1,8 +1,22 @@
-## 2.11.1 (July 5th, 2024)
+## 2.12.2 (October 9th, 2024)
 
 BUG FIXES:
 
-* Allowing to wipe the record regions, but dropping support for "leave as is" behaviour when null
+* Allowing to wipe the record regions
+
+## 2.12.1 (Sep 23rd, 2024)
+
+BUG FIXES:
+
+* Adds "feeds" field to the Answer struct
+* Adds "destinations" field to the Feed struct
+
+## 2.12.0 (Jul 19th, 2024)
+
+FEATURES:
+
+* Adds support for new split monitoring permissions create_jobs, update_jobs and delete_jobs
+* Remove DDI (DHCP & IPAM) code
 
 ## 2.11.0 (May 23rd, 2024)
 

@@ -13,7 +13,7 @@ import (
 )
 
 const (
-	clientVersion = "2.11.1"
+	clientVersion = "2.12.2"
 
 	defaultEndpoint               = "https://api.nsone.net/v1/"
 	defaultShouldFollowPagination = true
@@ -54,9 +54,6 @@ type Client struct {
 	// Whether the client should handle paginated responses automatically.
 	FollowPagination bool
 
-	// Enables permissions compatibility with the DDI API.
-	DDI bool
-
 	// From the excellent github-go client.
 	common service // Reuse a single struct instead of allocating one for each service on the heap.
 
@@ -80,11 +77,6 @@ type Client struct {
 	Zones                *ZonesService
 	Versions             *VersionsService
 	DNSSEC               *DNSSECService
-	IPAM                 *IPAMService
-	ScopeGroup           *ScopeGroupService
-	Scope                *ScopeService
-	Reservation          *ReservationService
-	OptionDef            *OptionDefService
 	TSIG                 *TsigService
 	View                 *DNSViewService
 	Network              *NetworkService
@@ -131,11 +123,6 @@ func NewClient(httpClient Doer, options ...func(*Client)) *Client {
 	c.Zones = (*ZonesService)(&c.common)
 	c.Versions = (*VersionsService)(&c.common)
 	c.DNSSEC = (*DNSSECService)(&c.common)
-	c.IPAM = (*IPAMService)(&c.common)
-	c.ScopeGroup = (*ScopeGroupService)(&c.common)
-	c.Scope = (*ScopeService)(&c.common)
-	c.Reservation = (*ReservationService)(&c.common)
-	c.OptionDef = (*OptionDefService)(&c.common)
 	c.TSIG = (*TsigService)(&c.common)
 	c.View = (*DNSViewService)(&c.common)
 	c.Network = (*NetworkService)(&c.common)
@@ -183,11 +170,6 @@ func SetRateLimitFunc(ratefunc func(rl RateLimit)) func(*Client) {
 // SetFollowPagination sets a Client instances' FollowPagination attribute.
 func SetFollowPagination(shouldFollow bool) func(*Client) {
 	return func(c *Client) { c.FollowPagination = shouldFollow }
-}
-
-// SetDDIAPI configures the client to use permissions compatible with the DDI API.
-func SetDDIAPI() func(*Client) {
-	return func(c *Client) { c.DDI = true }
 }
 
 // Param is a container struct which holds a `Key` and `Value` field corresponding to the values of a URL parameter.
