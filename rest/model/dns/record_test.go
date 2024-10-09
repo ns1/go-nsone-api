@@ -21,6 +21,12 @@ var marshalRecordCases = []struct {
 		[]byte(`{"meta":{},"zone":"example.com","domain":"caa.example.com","type":"CAA","answers":[{"meta":{},"answer":["0","issue","letsencrypt.org"]}],"filters":[],"regions":{}}`),
 	},
 	{
+		"marshalCAARecord manual",
+		&Record{Zone: "example.com", Domain: "caa.example.com", Type: "CAA"},
+		[]*Answer{NewCAAAnswer(0, "issue", "letsencrypt.org")},
+		[]byte(`{"zone":"example.com","domain":"caa.example.com","type":"CAA","answers":[{"meta":{},"answer":["0","issue","letsencrypt.org"]}],"filters":null,"regions":null}`),
+	},
+	{
 		"marshalURLFWDRecord",
 		NewRecord("example.com", "fwd.example.com", "URLFWD", nil, nil),
 		[]*Answer{
