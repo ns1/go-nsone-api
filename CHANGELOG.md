@@ -1,4 +1,4 @@
-## 2.12.2 (October 9th, 2024)
+## 2.12.2 (October 17th, 2024)
 
 BUG FIXES:
 
