@@ -38,6 +38,8 @@ type Record struct {
 
 	// Read-only fields
 	LocalTags []string `json:"local_tags,omitempty"` // Only relevant for DDI
+	CreatedAt int      `json:"created_at"`
+	UpdatedAt int      `json:"updated_at"`
 }
 
 // String returns the domain rtype in string format of record
